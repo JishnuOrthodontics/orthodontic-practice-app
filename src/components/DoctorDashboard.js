@@ -32,18 +32,15 @@ function DoctorDashboard() {
     };
   }, []);
 
-  // Function to handle appointment status updates
   const handleUpdateStatus = async (appointmentId, newStatus) => {
     try {
-      const appointmentRef = doc(db, "appointments", appointmentId); // Get document reference
+      const appointmentRef = doc(db, "appointments", appointmentId);
       await updateDoc(appointmentRef, {
         status: newStatus,
       });
       console.log("Appointment status updated successfully!");
-      // You could add UI feedback here (e.g., a success message)
     } catch (error) {
       console.error("Error updating appointment status:", error);
-      // Display an error message to the user
       alert("Error updating appointment status. Please try again.");
     }
   };
@@ -66,7 +63,7 @@ function DoctorDashboard() {
                 <th>Email</th>
                 <th>Message</th>
                 <th>Status</th>
-                <th>Actions</th> {/* Add Actions column */}
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -82,14 +79,14 @@ function DoctorDashboard() {
                     <button
                       className="approve-button"
                       onClick={() => handleUpdateStatus(appointment.id, "approved")}
-                      disabled={appointment.status === "approved"} // Disable if already approved
+                      disabled={appointment.status === "approved"}
                     >
                       Approve
                     </button>
                     <button
                       className="reject-button"
                       onClick={() => handleUpdateStatus(appointment.id, "rejected")}
-                      disabled={appointment.status === "rejected"} // Disable if already rejected
+                      disabled={appointment.status === "rejected"}
                     >
                       Reject
                     </button>
@@ -102,7 +99,31 @@ function DoctorDashboard() {
       </section>
 
       <section className="contacts-section">
-        {/* Contact form submissions (same as before) */}
+        <h3>Contact Form Submissions</h3>
+        {contacts.length === 0 ? (
+          <p>No contact form submissions.</p>
+        ) : (
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tbody>
+              {contacts.map((contact) => (
+                <tr key={contact.id}>
+                  <td>{contact.timestamp.toDate().toLocaleString()}</td>
+                  <td>{contact.name}</td>
+                  <td>{contact.email}</td>
+                  <td>{contact.message}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </section>
     </div>
   );
