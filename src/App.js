@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div className="App">
         <header>
-          <h1>Your Orthodontic Practice</h1>
+          <h1>World of Orthodontics</h1>
           <nav>
             <ul>
               <li><Link to="/">Home</Link></li>
