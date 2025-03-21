@@ -20,6 +20,7 @@ function DoctorDashboard() {
             console.log("Appointments Data:", appointmentsData); // Add this line
             setAppointments(appointmentsData);
             setLoading(false);
+            console.log("appointments.length (inside useEffect):", appointments.length);
         });
 
         const contactsQuery = query(collection(db, "contacts"), orderBy("timestamp", "desc"));
