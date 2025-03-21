@@ -44,3 +44,29 @@
   tr:nth-child(even) {
     background-color: #f9f9f9;
   }
+
+.approve-button,
+.reject-button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.approve-button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.reject-button {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+.approve-button:disabled,
+.reject-button:disabled {
+  background-color: #cccccc; /* Gray */
+  cursor: not-allowed;
+}
