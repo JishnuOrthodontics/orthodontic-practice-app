@@ -70,3 +70,26 @@
   background-color: #cccccc; /* Gray */
   cursor: not-allowed;
 }
+
+/* Style for update message */
+.update-message {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+/* Conditional styles based on status */
+.status-pending {
+    /* background-color: #f0f0f0; */ /* Light gray for pending */
+}
+
+.status-approved {
+  background-color: #d4edda; /* Light green for approved */
+  /* border-left: 4px solid #4CAF50; */
+}
+
+.status-rejected {
+  background-color: #f8d7da; /* Light red for rejected */
+  /* border-left: 4px solid #f44336; */
+}
