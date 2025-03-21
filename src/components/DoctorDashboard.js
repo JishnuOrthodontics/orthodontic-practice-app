@@ -122,7 +122,31 @@ function DoctorDashboard() {
             </section>
 
             <section className="contacts-section">
-                {/* Contact section (same as before) */}
+              <h3>Contact Form Submissions</h3>
+                {contacts.length === 0 ? (
+                  <p>No contact form submissions.</p>
+                ) : (
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {contacts.map((contact) => (
+                        <tr key={contact.id}>
+                          <td>{contact.timestamp.toDate().toLocaleString()}</td>
+                          <td>{contact.name}</td>
+                          <td>{contact.email}</td>
+                          <td>{contact.message}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
             </section>
         </div>
     );
