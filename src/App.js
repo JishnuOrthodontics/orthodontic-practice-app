@@ -8,13 +8,18 @@ function App() {
     <div className="App">
       <header>
         <h1>Your Orthodontic Practice</h1>
+        {/* Add a navigation later */}
       </header>
       <main>
-        <Auth />
-        <AppointmentForm />
+        <section className="auth-section">
+          <Auth />
+        </section>
+        <section className="appointment-section">
+          <AppointmentForm />
+        </section>
       </main>
       <footer>
-        <p>© 2023 Your Practice Name</p>
+        <p>© 2023 Your Practice Name. All rights reserved.</p>
       </footer>
     </div>
   );

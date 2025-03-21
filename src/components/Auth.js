@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Auth.css';
 import { auth } from '../firebase'; // Import your Firebase configuration
 import {
   createUserWithEmailAndPassword,
@@ -47,7 +48,7 @@ function Auth() {
   };
 
   return (
-    <div>
+    <div className='auth-container'>
       {user ? (
         // Display when user is signed in
         <div>

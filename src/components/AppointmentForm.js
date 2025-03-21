@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { db } from '../firebase'; // Import your Firebase configuration
 import { collection, addDoc } from 'firebase/firestore';
+import './AppointmentForm.css';
 
 function AppointmentForm() {
     const [name, setName] = useState('');
@@ -39,7 +40,7 @@ function AppointmentForm() {
     };
 
     return (
-        <div>
+        <div className='appointment-form-container'>
             <h2>Request an Appointment</h2>
             <form onSubmit={handleSubmit}>
                 <div>
