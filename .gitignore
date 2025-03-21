@@ -25,3 +25,4 @@ node_modules/
 build/
 .DS_Store
 .env
+scripts/serviceAccountKey.json
